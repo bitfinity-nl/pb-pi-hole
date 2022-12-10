@@ -1,0 +1,29 @@
+---
+# Title: PI-Hole server
+#
+# Author: Bitfinity / L. Rutten
+# Owner: Bitfinity / L. Rutten
+#
+# File: tasks/main.yml
+#
+# Description:
+#   Playbook for installing a PI-Hole server.
+#
+
+- name: "Configure UFW firewall IPv4"
+  community.general.ufw:
+    rule: allow
+    port: "{{ item.port }}"
+    proto: "{{ item.proto }}"
+  with_items:
+    - { port: '80', proto: 'tcp' }
+    - { port: '53', proto: 'tcp' }
+    - { port: '53', proto: 'udp' }
+    - { port: '67', proto: 'tcp' }
+    - { port: '67', proto: 'udp' }
+
+- name: "Configure UFW firewall IPv6"
+  community.general.ufw:
+    rule: allow
+    port: 546:547
+    proto: udp
