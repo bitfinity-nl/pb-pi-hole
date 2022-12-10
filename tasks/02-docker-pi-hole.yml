@@ -22,3 +22,9 @@
   file:
     path: /opt/pi-hole/
     state: directory
+
+- name: "Download docker-compose.yml to /opt/pi-hole/docker-compose.yml"
+  ansible.builtin.get_url:
+    url: https://goauthentik.io/docker-compose.yml
+    dest: /opt/pi-hol/docker-compose.yml
+
