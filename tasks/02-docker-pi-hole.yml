@@ -1,3 +1,24 @@
---
-
-
+---
+# Title: PI-Hole server
+#
+# Author: Bitfinity / L. Rutten
+# Owner: Bitfinity / L. Rutten
+#
+# File: tasks/02-docker-pi-hole.yml
+#
+# Description:
+#   Playbook for installing a PI-Hole server.
+#
+- name: "Install APT packages"
+  apt:
+    pkg:
+    - docker
+    - docker-compose
+    - docker.io
+    - python3-docker
+    - pwgen
+    
+- name: "Create directory for local PI-Hole /opt/pi-hole/"
+  file:
+    path: /opt/pi-hole/
+    state: directory
