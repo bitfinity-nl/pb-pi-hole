@@ -27,4 +27,5 @@
   roles:
   
   tasks:
-  
+    - name: "Include tasks/01-authentik.yml"
+      include_tasks: tasks/01-authentik.yml
