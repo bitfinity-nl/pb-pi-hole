@@ -1,0 +1,19 @@
+---
+# Title: PI-Hole server
+#
+# Author: Bitfinity / L. Rutten
+# Owner: Bitfinity / L. Rutten
+#
+# File: tasks/main.yml
+#
+# Description:
+#   Playbook for installing a PI-Hole server.
+#
+# Sources:
+#   - https://docs.pi-hole.net/main/prerequisites/
+#
+- name:
+
+- name: 
+
+- name: 
