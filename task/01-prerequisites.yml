@@ -4,7 +4,7 @@
 # Author: Bitfinity / L. Rutten
 # Owner: Bitfinity / L. Rutten
 #
-# File: tasks/main.yml
+# File: tasks/01-prerequisites.yml
 #
 # Description:
 #   Playbook for installing a PI-Hole server.
