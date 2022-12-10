@@ -9,7 +9,6 @@
 # Description:
 #   Playbook for installing a PI-Hole server.
 #
-
 - name: "Configure UFW firewall IPv4"
   community.general.ufw:
     rule: allow
