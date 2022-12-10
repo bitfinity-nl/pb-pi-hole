@@ -11,6 +11,8 @@
 #
 # Sources:
 #   - https://docs.pi-hole.net/main/prerequisites/
+#   - https://github.com/pi-hole/docker-pi-hole
+#
 
 - hosts: localhost
   connection: local
