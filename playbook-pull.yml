@@ -17,6 +17,8 @@
   become: yes
   
   vars:
+    # -- PI-Hole --
+    pihole_region: 'Europe/Amsterdam'
   
   handlers:
   
