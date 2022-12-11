@@ -34,7 +34,7 @@
     state: stopped
     enabled: no
 
-- name: "Check if /opt/authentik/.env exist(s)"
+- name: "Check if /etc/resolv.conf exist(s)"
   stat:
     path: /etc/resolv.conf
   register: result_resolv_conf
