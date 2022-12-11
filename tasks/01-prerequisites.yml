@@ -28,7 +28,7 @@
     - { port: '80', proto: 'tcp' }
     - { port: '53', proto: 'tcp' }
     - { port: '53', proto: 'udp' }
-    - { port: '67', proto: 'tcp' }
+#    - { port: '67', proto: 'tcp' }
     - { port: '67', proto: 'udp' }
 
 - name: "Configure UFW firewall IPv6"
