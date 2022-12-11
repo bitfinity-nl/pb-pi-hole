@@ -28,6 +28,21 @@
     src: templates/docker-compose.yml.j2
     dest: /opt/pi-hole/docker-compose.yml
 
+- name: "Stop and disable systemd-resolved (53/tcp) for Pi-Hole"
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    state: stopped
+    enabled: no
+
+- name: "Configure local DNS /etc/resolv.conf"
+  ansible.builtin.blockinfile:
+    path: /etc/resolv.conf
+    marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK - Local DNS configuration -->"
+    insertbefore: "^nameserver 127.0.0.53"
+    block: |2
+      # Google DNS server (Temporay)"
+      nameserver 8.8.8.8
+      
 - name: "Create and start services"
   community.docker.docker_compose:
     project_src: /opt/pi-hole/
@@ -38,3 +53,11 @@
 - ansible.builtin.debug:
     var: output
 
+- name: "Configure local DNS /etc/resolv.conf"
+  ansible.builtin.blockinfile:
+    path: /etc/resolv.conf
+    marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK - Local DNS configuration -->"
+    insertbefore: "^nameserver 127.0.0.53"
+    block: |2
+      # Local Pi-Hole DNS server
+      nameserver 127.0.0.1
