@@ -37,7 +37,7 @@
   ansible.builtin.blockinfile:
     path: /etc/resolv.conf
     marker: "#<!-- {mark} ANSIBLE MANAGED BLOCK - Local DNS configuration -->"
-    insertafter: "#<!-- END ANSIBLE MANAGED BLOCK - Local DNS configuration -->"
+    insertbefore: "^nameserver 127.0.0.53"
     block: |2
       # Google DNS server
       nameserver 8.8.8.8
