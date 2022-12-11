@@ -25,4 +25,4 @@ pihole_region : 'Europe/Amsterdam'
 
 2. Set permission on configuration file: `chmod 600 ~/.ansible-config.yml`
 3. Install dependencies: `apt install -y ansible git`
-4. Initial setup: `ansible -U https://github.com/bitfinity-nl/pb-pi-hole.git`
+4. Initial setup: `ansible-pull -U https://github.com/bitfinity-nl/pb-pi-hole.git`
