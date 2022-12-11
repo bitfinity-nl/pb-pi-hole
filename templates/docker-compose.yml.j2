@@ -13,7 +13,7 @@ services:
       - "80:80/tcp"
     environment:
       TZ: '{{ pihole_region }}'
-      # WEBPASSWORD: 'set a secure password here or it will be random'
+      WEBPASSWORD: '{{ pihole_webpassword }}'
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole:/etc/pihole'
