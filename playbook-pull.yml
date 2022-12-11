@@ -35,5 +35,5 @@
       include_tasks: tasks/01-prerequisites.yml
  
     - name: "Include tasks/02-docker-pi-hole.yml"
-      include_tasks: tasks/002-docker-pi-hole.yml
+      include_tasks: tasks/02-docker-pi-hole.yml
      
