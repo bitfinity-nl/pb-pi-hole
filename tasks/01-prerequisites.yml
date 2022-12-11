@@ -9,6 +9,16 @@
 # Description:
 #   Playbook for installing a PI-Hole server.
 #
+- name: "Transfer templates/ubt/01-netcfg-yml.j2 /etc/netplan/01-netcfg.yaml"
+  template:
+    src: templates/netplan/01-netcfg-yml.j2
+    dest: /etc/netplan/01-netcfg.yaml
+    owner: root
+    group: root
+    mode: 0755
+    backup: yes
+  notify: netplan_apply
+  
 - name: "Configure UFW firewall IPv4"
   community.general.ufw:
     rule: allow
