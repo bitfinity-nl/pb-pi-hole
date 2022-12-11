@@ -14,9 +14,9 @@
 #   - https://github.com/pi-hole/docker-pi-hole
 #
 
-- hosts: localhost
+- hosts: 127.0.0.1
   connection: local
-  become: yes
+  become: true
 
   pre-tasks:
     - name: "Include defaults file ~/.ansible-config.yml"
