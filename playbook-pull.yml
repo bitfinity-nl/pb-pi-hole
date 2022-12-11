@@ -14,11 +14,11 @@
 #   - https://github.com/pi-hole/docker-pi-hole
 #
 
-- hosts: 127.0.0.1
+- hosts: localhosts
   connection: local
   become: true
 
-  pre-tasks:
+  pre_tasks:
     - name: "Include defaults file ~/.ansible-config.yml"
       include_vars: ~/.ansible-config.yml
       
