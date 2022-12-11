@@ -26,5 +26,5 @@
 - name: "Download docker-compose.yml to /opt/pi-hole/docker-compose.yml"
   ansible.builtin.template:
     src: templates/docker-compose.yml.j2
-    dest: /opt/pi-hol/docker-compose.yml
+    dest: /opt/pi-hole/docker-compose.yml
 
