@@ -24,3 +24,4 @@ pihole_region : 'Europe/Amsterdam'
 ```
 
 2. Set permission on configuration file: `chmod 600 ~/.ansible-config.yml`
+3. Install dependencies: `apt install -y ansible git`
