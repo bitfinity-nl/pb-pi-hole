@@ -28,3 +28,11 @@
     src: templates/docker-compose.yml.j2
     dest: /opt/pi-hole/docker-compose.yml
 
+- name: "Create and start services"
+  community.docker.docker_compose:
+    project_src: /opt/pi-hole/
+  register: output
+
+- ansible.builtin.debug:
+    var: output
+
