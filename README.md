@@ -23,4 +23,4 @@ pihole_region : 'Europe/Amsterdam'
 
 ```
 
-2. Set permission `chmod 600 ~/.ansible-config.yml`
+2. Set permission on configuration file: `chmod 600 ~/.ansible-config.yml`
