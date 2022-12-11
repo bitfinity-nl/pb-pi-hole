@@ -17,14 +17,16 @@
 - hosts: localhost
   connection: local
   become: yes
-  
+
+  pre-tasks:
+    - name: "Include defaults file ~/.ansible-config.yml"
+      include_vars: ~/.ansible-config.yml
+      
   vars:
     # -- PI-Hole --
-    pihole_region: 'Europe/Amsterdam'
+    pihole_region : 'Europe/Amsterdam'
   
   handlers:
-  
-  pretasks:
   
   roles:
   
