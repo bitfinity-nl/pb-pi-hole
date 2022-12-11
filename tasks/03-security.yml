@@ -1,0 +1,20 @@
+---
+# Title: PI-Hole server
+#
+# Author: Bitfinity / L. Rutten
+# Owner: Bitfinity / L. Rutten
+#
+# File: tasks/03-security.yml
+#
+# Description:
+#   Playbook for installing a PI-Hole server.
+#
+- name: "Allow SSH with bruteforce protection"
+  community.general.ufw:
+    rule: limit
+    port: ssh
+    proto: tcp
+    
+- name: "Enable UFW"
+  community.general.ufw:
+    state: enabled 
