@@ -22,18 +22,23 @@
   file:
     path: /opt/pi-hole/
     state: directory
-
+  
 - name: "Download docker-compose.yml to /opt/pi-hole/docker-compose.yml"
   ansible.builtin.template:
     src: templates/pi-hole/docker-compose.yml.j2
     dest: /opt/pi-hole/docker-compose.yml
-
+  
 - name: "Stop and disable systemd-resolved (53/tcp) for Pi-Hole"
   ansible.builtin.systemd:
     name: systemd-resolved
     state: stopped
     enabled: no
 
+- name: "Check if /opt/authentik/.env exist(s)"
+  stat:
+    path: /etc/resolv.conf
+  register: result_resolv_conf
+  
 - name: "Configure local DNS /etc/resolv.conf"
   ansible.builtin.blockinfile:
     path: /etc/resolv.conf
@@ -42,7 +47,8 @@
     block: |2
       # Google DNS server (Temporay)"
       nameserver 8.8.8.8
-      
+  when: result_resolv_conf.stat.exists
+
 - name: "Create and start services"
   community.docker.docker_compose:
     project_src: /opt/pi-hole/
@@ -61,3 +67,4 @@
     block: |2
       # Local Pi-Hole DNS server
       nameserver 127.0.0.1
+  when: result_resolv_conf.stat.exists
