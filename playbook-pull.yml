@@ -38,4 +38,6 @@
  
     - name: "Include tasks/02-docker-pi-hole.yml"
       include_tasks: tasks/02-docker-pi-hole.yml
-     
+
+    - name: "Include tasks/03-security.yml"
+      include_tasks: tasks/03-security.yml
