@@ -26,3 +26,9 @@
     rule: allow
     port: 546:547
     proto: udp
+
+- name: "Stop and disable systemd-resolved (53/tcp) for Pi-Hole"
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    state: stopped
+    enabled: no
