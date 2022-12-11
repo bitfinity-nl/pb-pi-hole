@@ -28,7 +28,8 @@
     pihole_region : 'Europe/Amsterdam'
   
   handlers:
-  
+    - include: handlers/main.yml
+    
   roles:
   
   tasks:
