@@ -13,6 +13,7 @@
 #   - https://docs.pi-hole.net/main/prerequisites/
 #   - https://github.com/pi-hole/docker-pi-hole
 #   - https://discourse.pi-hole.net/t/docker-unable-to-bind-to-port-53/45082/7
+#   - https://arstech.net/pi-hole-blocking-lists-2022/
 #
 
 - hosts: localhost
