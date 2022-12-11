@@ -68,3 +68,8 @@
       # Local Pi-Hole DNS server
       nameserver 127.0.0.1
   when: result_resolv_conf.stat.exists
+  
+- name: "Remove symlink /etc/resolv.conf" 
+  file:
+   path: "/etc/resolv.conf"
+   state: absent
