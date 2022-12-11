@@ -19,7 +19,8 @@ Ansible Playbook for installing a PI-Hole server
 #
 
 # -- PI-Hole settings --
-pihole_region : 'Europe/Amsterdam'
+pihole_region      : 'Europe/Amsterdam'
+pihole_webpassword : '<set your password here>'
 
 ```
 
